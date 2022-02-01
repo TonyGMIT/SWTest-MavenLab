@@ -14,4 +14,9 @@ public class Calculator {
         int total = firstNum + secondNum;
         return total;
     }
+
+    public int subtract(int firstNum, int secondNum) {
+        int total = firstNum - secondNum;
+        return total;
+    }
 }
