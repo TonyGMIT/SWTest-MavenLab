@@ -19,4 +19,14 @@ public class Calculator {
         int total = firstNum - secondNum;
         return total;
     }
+
+    public int multiply(int firstNum, int secondNum) {
+        int total = firstNum * secondNum;
+        return total;
+    }
+
+    public int divide(int firstNum, int secondNum) {
+        int total = firstNum / secondNum;
+        return total;
+    }
 }
