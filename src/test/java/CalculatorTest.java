@@ -1,15 +1,19 @@
 import ie.gmit.week2.Calculator;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 
 public class CalculatorTest {
-    Calculator Calc = new Calculator();
+    Calculator Calc;
 
-    @Test
+    @BeforeEach
     void justAnExample()
     {
+        Calc = new Calculator();
     }
 
     @Test
@@ -20,6 +24,12 @@ public class CalculatorTest {
     @Test
     void testSubtract() {
         assertEquals(10, Calc.subtract(20,10));
+    }
+    @Test
+    void testSubtractValue() {
+        final String message = "Invalid Number";
+        Exception exceptionThrown = assertThrows(IllegalArgumentException.class, ()-> Calc.subtract(1000,9999));
+        assertEquals(message,exceptionThrown.getMessage());
     }
 
     @Test
