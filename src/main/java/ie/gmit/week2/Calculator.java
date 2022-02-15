@@ -1,5 +1,7 @@
 package ie.gmit.week2;
 
+import javax.annotation.processing.Messager;
+
 public class Calculator {
     int firstNum;
     int secondNum;
@@ -16,8 +18,14 @@ public class Calculator {
     }
 
     public int subtract(int firstNum, int secondNum) {
-        int total = firstNum - secondNum;
-        return total;
+        if(firstNum >= 0 && firstNum < 1000 && secondNum >= 0 && secondNum < 1000){
+            int total = firstNum - secondNum;
+            return total;
+        }
+        else{
+            String message = "Invalid Number";
+            throw new IllegalArgumentException(message);
+        }
     }
 
     public int multiply(int firstNum, int secondNum) {
