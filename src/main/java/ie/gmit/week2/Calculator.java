@@ -29,8 +29,14 @@ public class Calculator {
     }
 
     public int multiply(int firstNum, int secondNum) {
-        int total = firstNum * secondNum;
-        return total;
+        if(firstNum >= 0 && firstNum < 1000 && secondNum >= 0 && secondNum < 1000) {
+            int total = firstNum * secondNum;
+            return total;
+        }
+        else{
+            String message = "Invalid Number";
+            throw new IllegalArgumentException(message);
+        }
     }
 
     public int divide(int firstNum, int secondNum) {
